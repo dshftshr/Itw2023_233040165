@@ -1,0 +1,185 @@
+
+@font-face {
+    font-family: 'cormorantgaramond';
+    src: url(../fonts/CormorantGaramond-SemiBold-webfont.woff) format(woff);
+}
+
+/*Style Utama*/
+body {
+    font: 18px/36px 'cormorantgaramond', 'Arial Narrow', arial, sans-serif;
+    background-color: #ddd;
+}
+
+h1 {
+    font-size: 30px;
+    margin: 50px 0;
+    text-align: center;
+    text-shadow: 1px 1px 1px white;
+}
+
+.container {
+    font-size: x-small;
+    width: 600px;
+    background-color: white;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0 0 3px 3px rgba(0, 0, 0, 3);
+    border-radius: 5px;
+}
+
+.gallery li {
+    width: 120px;
+    height: 120px;
+    float: left;
+    margin-right: 20px;
+    position: relative;
+}
+
+.gallery .picture-1 {
+    border: 5px solid #565256;
+}
+
+.gallery .picture-2 {
+    border: 5px solid #565256;
+}
+
+.gallery .picture-3 {
+    border: 5px solid #565256;
+}
+
+.gallery .picture-4 {
+    border: 5px solid #565256;
+}
+
+.gallery li,
+.gallery li a img
+.gallery li span{
+    border-radius: 50%;
+}
+
+.gallery li span {
+    display: block;
+    width: 120px;
+    height: 120px;
+    background-color: rgba(200, 200, 200, .5);
+    position: absolute;
+    top: 0;
+    text-align: center;
+    line-height: 120px;
+    color: #333;
+    text-shadow: 1px 1px 1px #ddd;
+    transform: scale(0) rotate(0);
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.gallery li a:hover span {
+    opacity: 1;
+    transform: scale(1) rotate(360deg)
+}
+
+.clear {
+    clear: both;
+}
+
+.overlay {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0;
+    z-index: 9999;
+    transition: .8s;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.overlay:target {
+    width: auto;
+    height: auto;
+    border: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 7);
+}
+
+.overlay img {
+    max-height: 100%;
+    box-shadow: 2px 2px 7px rgba(0, 0, 0, .5);
+    border-radius: 0;
+}
+
+.overlay:target img {
+    animation: zoomDanFade .5s;
+}
+
+.overelay .close {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    margin-left: -20px;
+    color: white;
+    text-decoration: none;
+    background-color: black;
+    border: 1px solid white;
+    line-height: 14px;
+    padding: 5px;
+    opacity: 0;
+}
+
+.overlay:target .close {
+    animation: slideDown .5s .5s forwards;
+}
+
+.overlay:target .next, .overlay:target .prev {
+    animation: fade .5s .2s forwards;
+}
+
+/* Navigasi */
+.next .prev {
+    width: 40px;
+    height: 40px;
+    background-image: url(../img/thumbs/navbar.jpeg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 50%;
+    margin-left: 50px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    opacity: 0;
+}
+
+/* Anivasi */
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframese zoomDanFade {
+    0% {
+        transform: scale(.5)
+        opacity: 0;
+    }
+    100% {
+        tranfrom: scale(1)
+        opacity: 1;
+    }
+}
+
+@keyframes slidedown {
+    0% {
+        opacity: 0;
+        margin-top: -20px;
+    }
+    100% {
+        opacity: 1;
+        margin-top: 1;
+    }
+}
+
