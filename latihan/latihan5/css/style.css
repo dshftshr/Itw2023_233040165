@@ -11,27 +11,30 @@ body {
 }
 
 h1 {
-    font-size: 30px;
-    margin: 50px 0;
+    font-family: 'cormorantgaramond', 'Arial Narrow', arial, sans-serif;
+    font-size: 80px;
+    margin: 60px 0;
     text-align: center;
     text-shadow: 1px 1px 1px white;
+    color: #333;
 }
 
 .container {
-    font-size: x-small;
     width: 600px;
     background-color: white;
     margin: auto;
-    padding: 20px;
+    padding: 30px;
     box-shadow: 0 0 3px 3px rgba(0, 0, 0, 3);
-    border-radius: 5px;
+    border-radius: 12px;
 }
 
 .gallery li {
     width: 120px;
     height: 120px;
+    /*overflow: hidden;*/
+    border: 5px solid #666;
     float: left;
-    margin-right: 20px;
+    margin: 10px;
     position: relative;
 }
 
@@ -82,6 +85,7 @@ h1 {
     clear: both;
 }
 
+/* overlay */
 .overlay {
     width: 0;
     height: 0;
@@ -89,7 +93,7 @@ h1 {
     position: fixed;
     top: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0;
+    background: rgba(0, 0, 0, 0);
     z-index: 9999;
     transition: .8s;
     text-align: center;
@@ -107,7 +111,6 @@ h1 {
 .overlay img {
     max-height: 100%;
     box-shadow: 2px 2px 7px rgba(0, 0, 0, .5);
-    border-radius: 0;
 }
 
 .overlay:target img {
@@ -132,27 +135,30 @@ h1 {
     animation: slideDown .5s .5s forwards;
 }
 
-.overlay:target .next, .overlay:target .prev {
-    animation: fade .5s .2s forwards;
+.overlay:target .next, 
+.overlay:target .prev {
+    animation: fadeAjah .5s .2s forwards;
 }
 
 /* Navigasi */
 .next .prev {
-    width: 40px;
-    height: 40px;
-    background-image: url(../img/thumbs/navbar.jpeg);
-    background-repeat: no-repeat;
-    background-size: contain;
+    width: 57px;
+    height: 57px;
+    background-image: url(../img/next.png);
     position: absolute;
-    top: 50%;
+    text-indent: -9999px;
+    top: 45%;
     margin-left: 50px;
-    border-radius: 50%;
-    border: 2px solid #fff;
     opacity: 0;
 }
 
-/* Anivasi */
-@keyframes fade {
+.prev {
+    background-image: url(../img/previous.png);
+    margin-left: -100px;
+}
+
+/* Animasi */
+@keyframes fadeAjah {
     0% {
         opacity: 0;
     }
@@ -161,18 +167,18 @@ h1 {
     }
 }
 
-@keyframese zoomDanFade {
+@keyframes zoomDanFade {
     0% {
-        transform: scale(.5)
+        transform: scale(.5);
         opacity: 0;
     }
     100% {
-        tranfrom: scale(1)
+        transform: scale(1);
         opacity: 1;
     }
 }
 
-@keyframes slidedown {
+@keyframes slideDownFade {
     0% {
         opacity: 0;
         margin-top: -20px;
